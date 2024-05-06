@@ -1,1 +1,14 @@
 docker run --name Nginx2 -v /C/docker/volumes/nginx:/usr/share/nginx/html -p 9080:80 -d nginx:latest
+
+// Subuindo um container MySQL usando volumes
+
+docker run 
+--name MySQL 
+-v /C/docker/volumes/mysql:/var/lib/mysql
+-p 3306:3306 
+-e MYSQL_ROOT_PASSWORD=root
+-e MYSQL_USER=delmondes
+-e MYSQL_USER_PASSWORD=123
+-d mysql:latest 
+
+docker run --name MySQL -v /C/docker/volumes/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=delmondes -e MYSQL_USER_PASSWORD=123 -d mysql:latest 
